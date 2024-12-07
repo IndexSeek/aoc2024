@@ -3,9 +3,11 @@ import os
 import ibis
 from ibis import _
 
+import importlib.resources as resources
+
 
 def read_data(con: ibis.BaseBackend, filepath: str = "input.txt") -> ibis.Table:
-    INPUT_TXT = os.path.join(os.path.dirname(__file__), filepath)
+    INPUT_TXT = resources.files("aoc2024.data.day01").joinpath(filepath)
     t = con.read_csv(INPUT_TXT, header=False, names=["a"]).mutate(
         a=_.a.split("   ")[0].cast("int"), b=_.a.split("   ")[1].cast("int")
     )

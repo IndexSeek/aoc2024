@@ -16,6 +16,12 @@ dev = [
   "pytest==8.3.4",
 ]
 
+[tool.setuptools.packages]
+find = { include = ["aoc2024"] }
+
+[tool.setuptools.package-data]
+"aoc2024" = ["data/**/*.txt"]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
