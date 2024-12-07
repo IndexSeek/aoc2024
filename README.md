@@ -6,7 +6,7 @@ https://adventofcode.com/2024
 
 This year is my first year participating in Advent of Code. I will mostly use Ibis to
 solve the problems and fall back to UDFs, SQL expressions, or a backend's underlying
-API if necessary - or if I want to explore a particular API for fun. 
+API if necessary - or if I want to explore a particular API for fun.
 
 I will also likely use this project to experiment with CI tooling.
 
