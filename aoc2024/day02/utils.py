@@ -1,13 +1,13 @@
-import os
 
-import ibis
 import polars as pl
-from ibis import _
 
-import importlib.resources as resources
+import aoc2024.utils
 
 
-def read_data(filepath: str = "input.txt") -> pl.DataFrame:
-    INPUT_TXT = resources.files("aoc2024.data.day02").joinpath(filepath)
-    df = pl.read_csv(INPUT_TXT, has_header=False, new_columns=["a"])
+def read_data(filename: str = "input.txt") -> pl.DataFrame:
+    df = pl.read_csv(
+        aoc2024.utils.get_filepath("aoc2024.data.day02", filename),
+        has_header=False,
+        new_columns=["a"],
+    )
     return df

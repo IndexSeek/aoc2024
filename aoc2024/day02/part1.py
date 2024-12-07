@@ -1,6 +1,4 @@
-import ibis
 import polars as pl
-from ibis import _
 
 from aoc2024.day02.utils import read_data
 

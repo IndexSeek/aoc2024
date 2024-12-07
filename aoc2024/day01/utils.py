@@ -1,13 +1,12 @@
-import os
 
 import ibis
 from ibis import _
 
-import importlib.resources as resources
+import aoc2024.utils
 
 
-def read_data(con: ibis.BaseBackend, filepath: str = "input.txt") -> ibis.Table:
-    INPUT_TXT = resources.files("aoc2024.data.day01").joinpath(filepath)
+def read_data(con: ibis.BaseBackend, filename: str = "input.txt") -> ibis.Table:
+    INPUT_TXT = aoc2024.utils.get_filepath("aoc2024.data.day01", filename)
     t = con.read_csv(INPUT_TXT, header=False, names=["a"]).mutate(
         a=_.a.split("   ")[0].cast("int"), b=_.a.split("   ")[1].cast("int")
     )
