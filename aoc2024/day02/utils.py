@@ -1,4 +1,3 @@
-
 import polars as pl
 
 import aoc2024.utils

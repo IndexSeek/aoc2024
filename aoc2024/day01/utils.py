@@ -1,4 +1,3 @@
-
 import ibis
 from ibis import _
 
